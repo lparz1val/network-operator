@@ -336,10 +336,11 @@ const (
 )
 
 type BGPPeerAfItem struct {
-	Ctrl       Option[string] `json:"ctrl"`
-	SendComExt AdminSt        `json:"sendComExt"`
-	SendComStd AdminSt        `json:"sendComStd"`
-	Type       AddressFamily  `json:"type"`
+	Ctrl         Option[string] `json:"ctrl"`
+	SendComExt   AdminSt        `json:"sendComExt"`
+	SendComStd   AdminSt        `json:"sendComStd"`
+	RewriteRtAsn AdminSt        `json:"rewriteRtAsn,omitempty"`
+	Type         AddressFamily  `json:"type"`
 
 	RtCtrlPItems struct {
 		RtCtrlPList gnmiext.List[RtCtrlDirection, *BGPPeerAfRtCtrlP] `json:"RtCtrlP-list,omitzero"`

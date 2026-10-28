@@ -195,6 +195,11 @@ type BGPPeerAddressFamily struct {
 	// for this address family.
 	// +optional
 	OutboundRoutingPolicyRef *LocalObjectReference `json:"outboundRoutingPolicyRef,omitempty"`
+
+	// RewriteRtAsn rewrites the AS portion of auto-generated EVPN Route Targets
+	// when advertising to this peer. Only valid for l2vpn-evpn with rt auto.
+	// +optional
+	RewriteRtAsn *bool `json:"rewriteRtAsn,omitempty"`
 }
 
 // BGPPeerStatus defines the observed state of BGPPeer.

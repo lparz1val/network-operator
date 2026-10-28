@@ -145,6 +145,11 @@ spec:
                         - name
                         type: object
                         x-kubernetes-map-type: atomic
+                      rewriteRtAsn:
+                        description: |-
+                          RewriteRtAsn rewrites the AS portion of auto-generated EVPN Route Targets
+                          when advertising to this peer. Only valid for l2vpn-evpn with rt auto.
+                        type: boolean
                       routeReflectorClient:
                         description: |-
                           RouteReflectorClient indicates whether this peer should be treated as a route reflector client
@@ -203,6 +208,11 @@ spec:
                         - name
                         type: object
                         x-kubernetes-map-type: atomic
+                      rewriteRtAsn:
+                        description: |-
+                          RewriteRtAsn rewrites the AS portion of auto-generated EVPN Route Targets
+                          when advertising to this peer. Only valid for l2vpn-evpn with rt auto.
+                        type: boolean
                       routeReflectorClient:
                         description: |-
                           RouteReflectorClient indicates whether this peer should be treated as a route reflector client
@@ -261,6 +271,11 @@ spec:
                         - name
                         type: object
                         x-kubernetes-map-type: atomic
+                      rewriteRtAsn:
+                        description: |-
+                          RewriteRtAsn rewrites the AS portion of auto-generated EVPN Route Targets
+                          when advertising to this peer. Only valid for l2vpn-evpn with rt auto.
+                        type: boolean
                       routeReflectorClient:
                         description: |-
                           RouteReflectorClient indicates whether this peer should be treated as a route reflector client

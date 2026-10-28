@@ -979,6 +979,12 @@ func bgpPeerAfItems(req *provider.EnsureBGPPeerRequest) gnmiext.List[AddressFami
 		if name, ok := req.OutboundRoutingPolicies[afType]; ok {
 			item.RtCtrlPItems.RtCtrlPList.Set(&BGPPeerAfRtCtrlP{Direction: RtCtrlDirectionOut, RtMap: name})
 		}
+		if t == AddressFamilyL2EVPN {
+			item.RewriteRtAsn = AdminStDisabled
+			if af.RewriteRtAsn != nil && *af.RewriteRtAsn {
+				item.RewriteRtAsn = AdminStEnabled
+			}
+		}
 		list.Set(item)
 	}
 
